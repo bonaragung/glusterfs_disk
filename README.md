@@ -22,6 +22,7 @@ Ensure /dev/sdb is available and does not contain important data.
 ```
 ### 2. Partition the Disk
 
+```bash
 sudo fdisk /dev/sdb
 
 In fdisk, follow these steps:
@@ -36,20 +37,30 @@ Press Enter to accept default first and last sectors
 
 w – write changes and exit
 
+```
+
 ### 3. Format the Partition as XFS
 
+```bash
 sudo mkfs.xfs /dev/sdb1
+
+```
+
 
 ### 4. Create the Mount Point
 
+```bash
 sudo mkdir -p /gluster-storage
+```
+
 
 ### 5. Mount the Partition
 
+```bash
 sudo mount /dev/sdb1 /gluster-storage
-
+```
 ### 6. Make the Mount Persistent
-
+```bash
 Find the UUID:
 
 sudo blkid /dev/sdb1
@@ -61,7 +72,7 @@ Example output:
 Add to /etc/fstab:
 
 echo 'UUID=5be343de-5d27-4257-b758-df54356174b3 /gluster-storage xfs defaults 0 0' | sudo tee -a /etc/fstab
-
+```
 
 
 
