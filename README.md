@@ -74,6 +74,19 @@ Add to /etc/fstab:
 echo 'UUID=5be343de-5d27-4257-b758-df54356174b3 /gluster-storage xfs defaults 0 0' | sudo tee -a /etc/fstab
 ```
 
+#### Menggukan one-liner bash
+
+Jadikan executable
+
+```bash
+chmod +x setup_gluster_xfs.sh
+```
+
+Jalankan sebagai root atau dengan sudo:
+
+```bash
+sudo ./setup_gluster_xfs.sh
+```
 
 
 
